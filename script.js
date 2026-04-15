@@ -26,11 +26,13 @@ function checkGuess() {
     if (previousDifference === null) {
         message.textContent = guess > randomNumber ? "📉 Too high!" : "📈 Too low!";
     } else {
-        if (difference < previousDifference) {
-            message.textContent = "🔥 Warmer! You're getting closer!";
-        } else {
-            message.textContent = "❄️ Colder! You're going away!";
-        }
+       if (difference < previousDifference) {
+    message.textContent = "🔥 Warmer!";
+    message.style.color = "#22c55e";
+} else {
+    message.textContent = "❄️ Colder!";
+    message.style.color = "#3b82f6";
+}
     }
 
     previousDifference = difference;
